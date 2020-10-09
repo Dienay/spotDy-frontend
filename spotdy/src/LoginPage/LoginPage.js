@@ -5,7 +5,7 @@ import useForm from '../Hooks/useForm';
 import { useHistory } from 'react-router-dom';
 
 import { ContainerLogin } from './styled'
-import { Button } from '../Common/Styled/Button'
+import Button from '@material-ui/core/Button';
 
 function LoginPage() {
     const baseUrl = "https://spotdy.herokuapp.com/user"
@@ -20,6 +20,18 @@ function LoginPage() {
     const history = useHistory()
 
     const handleLogin = event => {
+        if(!form.email || !form.password) {
+            alert("Name and Password are required")
+        }
+
+        if(form.email.indexOf("@") === -1){
+            alert("Invalid Email")
+        }
+
+        if(form.password.length < 6){
+            alert("Password must have at least 6 characters")
+        }
+
         event.preventDefault()
         const body = {
             email: form.email,
@@ -34,13 +46,14 @@ function LoginPage() {
         })
         .catch(err => {
             console.log(err.message)
+            alert("Invalid Information")
         })
     }
     return (
         <ContainerLogin>
             <div>
                 <h2>Login</h2>
-                <form onSubmit={handleLogin}>
+                <form>
                     <input
                     value={form.email}
                     onChange={handleInputChange}
@@ -57,7 +70,7 @@ function LoginPage() {
                     placeholder="senha"
                     required
                     />
-                    <Button>Entrar</Button>
+                    <Button variant="contained" color="primary" onClick={handleLogin}>Entrar</Button>
                 </form>
             </div>
         </ContainerLogin>
