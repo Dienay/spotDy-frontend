@@ -81,7 +81,7 @@ function SignupPage() {
     }
 
     const toGoLoginPage = () => {
-        history.replace("/login")
+        history.push("/login")
     }
     return (
         <ContainerSignup>

@@ -5,6 +5,7 @@ export const ContainerCreate = styled.div`
     display: flex;
     height: 100vh;
     justify-content: center;
+    position: relative;
     width: 100vw;
 
     form {
@@ -28,4 +29,10 @@ export const CardCreate = styled.div`
     h2 {
         margin-top: 0;
     }
+`
+
+export const Back = styled.div`
+    position: fixed;
+    top: 16px;
+    left: 16px;
 `
