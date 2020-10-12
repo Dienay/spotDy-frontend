@@ -72,7 +72,7 @@ function LoginPage() {
                 <h2>Login</h2>
                 <form className={classes.root} noValidate autoComplete="off">
                     <TextField
-                        id="outlined-basic"
+                        id="email"
                         label="E-mail"
                         variant="outlined"
                         value={form.email}
@@ -81,7 +81,7 @@ function LoginPage() {
                          name="email"
                     />
                     <TextField
-                        id="outlined-basic"
+                        id="password"
                         label="Password"
                         variant="outlined"
                         value={form.password}

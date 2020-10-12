@@ -36,7 +36,7 @@ function SignupPage() {
 
     const history = useHistory()
 
-    const { form, onChange } = useForm({name: "", email: "", nickname: "", password:"", role: "", confirmpassword: ""})
+    const { form, onChange } = useForm({name: "", email: "", nickname: "", password:"", role: "", confirmPassword: ""})
 
     const handleInputChange = event => {
         const { name, value } = event.target
@@ -56,7 +56,7 @@ function SignupPage() {
             alert("Password must have at least 6 characters")
         }
 
-        if(form.password !== form.confirmpassword) {
+        if(form.password !== form.confirmPassword) {
           alert("Password do not match.")
         }
 
@@ -89,7 +89,7 @@ function SignupPage() {
                 <h2>Signup</h2>
                 <form className={classes.root} noValidate autoComplete="off">
                     <TextField
-                        id="outlined-basic"
+                        id="name"
                         label="Name"
                         variant="outlined"
                         value={form.name}
@@ -98,7 +98,7 @@ function SignupPage() {
                         name="name"
                     />
                     <TextField
-                        id="outlined-basic"
+                        id="email"
                         label="E-mail"
                         variant="outlined"
                         value={form.email}
@@ -107,7 +107,7 @@ function SignupPage() {
                          name="email"
                     />
                     <TextField
-                        id="outlined-basic"
+                        id="nickname"
                         label="Nickname"
                         variant="outlined"
                         value={form.nickname}
@@ -116,7 +116,7 @@ function SignupPage() {
                         name="nickname"
                     />
                     <TextField
-                        id="outlined-basic"
+                        id="password"
                         label="Password"
                         variant="outlined"
                         value={form.password}
@@ -125,13 +125,13 @@ function SignupPage() {
                         name="password"
                     />
                     <TextField
-                        id="outlined-basic"
+                        id="confirm-password"
                         label="Confirm password"
                         variant="outlined"
-                        value={form.confirmpassword}
+                        value={form.confirmPassword}
                         onChange={handleInputChange}
                         type="password"
-                        name="confirmpassword"
+                        name="confirm-password"
                     />
                     <FormControl variant="outlined" className={classes.formControl}>
                       <InputLabel id="demo-simple-select-outlined-label">Role</InputLabel>
@@ -147,7 +147,7 @@ function SignupPage() {
                         <MenuItem value="ADMIN">Admin</MenuItem>
                       </Select>
                     </FormControl>
-                    <Button variant="contained" color="primary" onClick={handleSignup}>Entrar</Button>
+                    <Button variant="contained" color="primary" onClick={handleSignup}>Create User</Button>
                     <Link href="#" onClick={toGoLoginPage} variant="body2">
                         Login
                     </Link>
