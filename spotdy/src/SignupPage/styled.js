@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContainerLogin = styled.div`
+export const ContainerSignup = styled.div`
     align-items: center;
     display: flex;
     height: 100vh;
@@ -14,16 +14,16 @@ export const ContainerLogin = styled.div`
     }
 `
 
-export const CardLogin = styled.div`
+export const CardSignup = styled.div`
     align-items: center;
     border: 1px solid #c4c4c4;
     border-radius: 8px;
     box-shadow: 0 0 5px #d6d6d6;
     flex-direction: column;
     display: flex;
-    height: 350px;
+    height: 650px;
     justify-content: center;
-    width: 300px;
+    width: 350px;
 
     h2 {
         margin-top: 0;

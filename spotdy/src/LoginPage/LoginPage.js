@@ -1,14 +1,27 @@
 import React from 'react';
 import axios from 'axios'
+import { baseUrl } from '../Common/CommonConst'
 
 import useForm from '../Hooks/useForm';
 import { useHistory } from 'react-router-dom';
 
-import { ContainerLogin } from './styled'
+import { ContainerLogin, CardLogin } from './styled'
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Link from '@material-ui/core/Link';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(1),
+        width: '250px',
+      },
+    },
+  }));
 
 function LoginPage() {
-    const baseUrl = "https://spotdy.herokuapp.com/user"
+    const classes = useStyles();
 
     const { form, onChange } = useForm({email: "", password:""})
 
@@ -39,7 +52,7 @@ function LoginPage() {
         }
 
         axios
-        .post(`${baseUrl}/login`, body)
+        .post(`${baseUrl}/user/login`, body)
         .then(response => {
             window.localStorage.setItem("token", response.data.token)
             history.replace("/")
@@ -49,30 +62,39 @@ function LoginPage() {
             alert("Invalid Information")
         })
     }
+
+    const toGoSignupPage = () => {
+        history.replace("/signup")
+    }
     return (
         <ContainerLogin>
-            <div>
+            <CardLogin>
                 <h2>Login</h2>
-                <form>
-                    <input
-                    value={form.email}
-                    onChange={handleInputChange}
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"    
-                    required
+                <form className={classes.root} noValidate autoComplete="off">
+                    <TextField
+                        id="outlined-basic"
+                        label="E-mail"
+                        variant="outlined"
+                        value={form.email}
+                        onChange={handleInputChange}
+                        type="email"
+                         name="email"
                     />
-                    <input
-                    value={form.password}
-                    onChange={handleInputChange}
-                    type="password"
-                    name="password"
-                    placeholder="senha"
-                    required
+                    <TextField
+                        id="outlined-basic"
+                        label="Password"
+                        variant="outlined"
+                        value={form.password}
+                        onChange={handleInputChange}
+                        type="password"
+                        name="password"
                     />
                     <Button variant="contained" color="primary" onClick={handleLogin}>Entrar</Button>
+                    <Link href="#" onClick={toGoSignupPage} variant="body2">
+                        Create User
+                    </Link>
                 </form>
-            </div>
+            </CardLogin>
         </ContainerLogin>
     )
 }

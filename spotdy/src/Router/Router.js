@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import CreateMusicPage from '../CreateMusicPage/CreateMusicPage';
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
@@ -17,8 +18,12 @@ function Router() {
                 <LoginPage />
             </Route>
 
-            <Route exact path="/cadastro" >
+            <Route exact path="/signup" >
                 <SignupPage />
+            </Route>
+
+            <Route exact path="/create" >
+                <CreateMusicPage />
             </Route>
 
             <Route path="/" >
