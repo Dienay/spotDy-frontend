@@ -5,11 +5,14 @@ import { axiosConfig, baseUrl } from '../Common/CommonConst'
 import useForm from '../Hooks/useForm';
 import { useHistory } from 'react-router-dom';
 
-import { ContainerCreate, Back, CardCreate } from './styled'
+import { ContainerCreate, Main, Middle, Back, CardCreate } from './styled'
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
+
+import Header from '../Components/Header/index'
+import SideBar from '../Components/SideBar/index'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -88,75 +91,81 @@ function CreateMusicPage() {
     }
     return (
         <ContainerCreate>
-            <Back>
-                <Link href="#" onClick={toGoHomePage} variant="body2">
-                    Back to home
-                </Link>
-            </Back>
-            <CardCreate>
-                <h2>Create Music</h2>
-                <form className={classes.root} noValidate autoComplete="off">
-                    <TextField
-                        id="title"
-                        label="Title"
-                        variant="outlined"
-                        value={form.title}
-                        onChange={handleInputChange}
-                        type="text"
-                        name="title"
-                    />
-                    <TextField
-                        id="author"
-                        label="Author"
-                        variant="outlined"
-                        value={form.author}
-                        onChange={handleInputChange}
-                        type="text"
-                        name="author"
-                    />
-                    <TextField
-                        id="date"
-                        label="Date"
-                        variant="outlined"
-                        value={form.date}
-                        onChange={handleInputChange}
-                        type="date"
-                        name="date"
-                        className={classes.textField}
-                        InputLabelProps={{
-                            shrink: true,
-                        }}
-                    />
-                    <TextField
-                        id="file"
-                        label="File/Url"
-                        variant="outlined"
-                        value={form.file}
-                        onChange={handleInputChange}
-                        type="text"
-                        name="file"
-                    />
-                    <TextField
-                        id="genre"
-                        label="Genre"
-                        variant="outlined"
-                        value={form.confirmpassword}
-                        onChange={handleInputChange}
-                        type="text"
-                        name="genre"
-                    />
-                    <TextField
-                        id="album"
-                        label="Album"
-                        variant="outlined"
-                        value={form.confirmpassword}
-                        onChange={handleInputChange}
-                        type="text"
-                        name="album"
-                    />
-                    <Button variant="contained" color="primary" onClick={handleSignup}>Create</Button>
-                </form>
-            </CardCreate>
+            <Header />
+            <Main>
+                <SideBar />
+                <Middle>
+                    <Back>
+                        <Link href="#" onClick={toGoHomePage} variant="body2">
+                            Back to home
+                        </Link>
+                    </Back>
+                    <CardCreate>
+                        <h2>Create Music</h2>
+                        <form className={classes.root} noValidate autoComplete="off">
+                            <TextField
+                                id="title"
+                                label="Title"
+                                variant="outlined"
+                                value={form.title}
+                                onChange={handleInputChange}
+                                type="text"
+                                name="title"
+                            />
+                            <TextField
+                                id="author"
+                                label="Author"
+                                variant="outlined"
+                                value={form.author}
+                                onChange={handleInputChange}
+                                type="text"
+                                name="author"
+                            />
+                            <TextField
+                                id="date"
+                                label="Date"
+                                variant="outlined"
+                                value={form.date}
+                                onChange={handleInputChange}
+                                type="date"
+                                name="date"
+                                className={classes.textField}
+                                InputLabelProps={{
+                                    shrink: true,
+                                }}
+                            />
+                            <TextField
+                                id="file"
+                                label="File/Url"
+                                variant="outlined"
+                                value={form.file}
+                                onChange={handleInputChange}
+                                type="text"
+                                name="file"
+                            />
+                            <TextField
+                                id="genre"
+                                label="Genre"
+                                variant="outlined"
+                                value={form.confirmpassword}
+                                onChange={handleInputChange}
+                                type="text"
+                                name="genre"
+                            />
+                            <TextField
+                                id="album"
+                                label="Album"
+                                variant="outlined"
+                                value={form.confirmpassword}
+                                onChange={handleInputChange}
+                                type="text"
+                                name="album"
+                            />
+                            <Button variant="contained" color="primary" onClick={handleSignup}>Create</Button>
+                        </form>
+                    </CardCreate>
+                </Middle>
+            </Main>
         </ContainerCreate>
     )
 }

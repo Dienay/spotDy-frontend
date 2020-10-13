@@ -11,6 +11,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 
+import Header from '../Components/Header/index'
+
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -68,33 +70,36 @@ function LoginPage() {
     }
     return (
         <ContainerLogin>
-            <CardLogin>
-                <h2>Login</h2>
-                <form className={classes.root} noValidate autoComplete="off">
-                    <TextField
-                        id="email"
-                        label="E-mail"
-                        variant="outlined"
-                        value={form.email}
-                        onChange={handleInputChange}
-                        type="email"
-                         name="email"
-                    />
-                    <TextField
-                        id="password"
-                        label="Password"
-                        variant="outlined"
-                        value={form.password}
-                        onChange={handleInputChange}
-                        type="password"
-                        name="password"
-                    />
-                    <Button variant="contained" color="primary" onClick={handleLogin}>Entrar</Button>
-                    <Link href="#" onClick={toGoSignupPage} variant="body2">
-                        Create User
-                    </Link>
-                </form>
-            </CardLogin>
+            <Header />
+            <section>
+                <CardLogin>
+                    <h2>Login</h2>
+                    <form className={classes.root} noValidate autoComplete="off">
+                        <TextField
+                            id="email"
+                            label="E-mail"
+                            variant="outlined"
+                            value={form.email}
+                            onChange={handleInputChange}
+                            type="email"
+                            name="email"
+                        />
+                        <TextField
+                            id="password"
+                            label="Password"
+                            variant="outlined"
+                            value={form.password}
+                            onChange={handleInputChange}
+                            type="password"
+                            name="password"
+                        />
+                        <Button variant="contained" color="primary" onClick={handleLogin}>Entrar</Button>
+                        <Link href="#" onClick={toGoSignupPage} variant="body2">
+                            Create User
+                        </Link>
+                    </form>
+                </CardLogin>
+            </section>
         </ContainerLogin>
     )
 }

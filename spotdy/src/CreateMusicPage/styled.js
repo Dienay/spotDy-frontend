@@ -1,18 +1,26 @@
 import styled from 'styled-components'
 
 export const ContainerCreate = styled.div`
-    align-items: center;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    position: relative;
-    width: 100vw;
+    height: 90vh;
 
     form {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+`
+
+export const Main = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+`
+
+export const Middle = styled.div`
+    align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
 `
 
 export const CardCreate = styled.div`
@@ -22,7 +30,7 @@ export const CardCreate = styled.div`
     box-shadow: 0 0 5px #d6d6d6;
     flex-direction: column;
     display: flex;
-    height: 650px;
+    height: 600px;
     justify-content: center;
     width: 350px;
 

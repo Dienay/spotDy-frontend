@@ -15,6 +15,8 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import Link from '@material-ui/core/Link';
 
+import Header from '../Components/Header/index'
+
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -85,6 +87,8 @@ function SignupPage() {
     }
     return (
         <ContainerSignup>
+            <Header />
+            <section>
             <CardSignup>
                 <h2>Signup</h2>
                 <form className={classes.root} noValidate autoComplete="off">
@@ -153,6 +157,7 @@ function SignupPage() {
                     </Link>
                 </form>
             </CardSignup>
+            </section>
         </ContainerSignup>
     )
 }

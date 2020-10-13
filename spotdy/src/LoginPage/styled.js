@@ -1,11 +1,15 @@
 import styled from 'styled-components'
 
 export const ContainerLogin = styled.div`
-    align-items: center;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    width: 100vw;
+    height: 90vh;
+    
+    section {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+    }
 
     form {
         display: flex;
