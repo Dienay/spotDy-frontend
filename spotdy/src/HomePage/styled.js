@@ -18,6 +18,7 @@ export const List = styled.div`
 
     > ul {
         margin-top: 0;
+        padding: 8px;
     }
 
     > ul > li {
