@@ -6,7 +6,6 @@ export const ContainerSidebar = styled.div`
     height: 92.5vh;
 
     section {
-        margin: 0 16px;
         font-weight: 500;
         font-size: 14px;
     }
@@ -19,8 +18,13 @@ export const TopSideBar = styled.div`
     display: flex;
 }
 
+> div:hover {
+    background-color: #c4c4c4;
+    transition: 200ms;
+}
+
 > div > img {
-    margin-right: 16px;
+    margin: 0 16px;
     width: 18px;
 }
 

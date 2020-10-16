@@ -1,11 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import iconHome from "../../Images/icons/home.svg"
 import iconBrowse from "../../Images/icons/browse.svg"
 import { ContainerSidebar, TopSideBar } from './styled'
-import MusicContext from '../../Contexts/MusicContext';
+import { axiosConfig, baseUrl } from '../../Common/CommonConst';
+import axios from 'axios'
 
 function SideBar() {
-    const playlist = useContext(MusicContext);
+    const [playlists, setPlaylist] = useState([
+        {name: "Mùsica pra limpar a casa"},
+        {name: "Mùsica pra lavar louça"},
+        {name: "Mùsica pra domrir"}
+    ])
+
+    // useEffect(() => {
+    //     getPlaylists()
+    // },[playlist])
+
+    // const getPlaylists = () =>{
+    //     axios
+    //     .get(`${baseUrl}/music/playlists`, axiosConfig)
+    //     .then(response => {
+    //         setPlaylist(response.data.result)
+    //     })
+    //     .catch(err => {
+    //     console.log(err.message)
+    //     })
+    // }
     return (
         <ContainerSidebar>
             <section>
@@ -20,20 +40,26 @@ function SideBar() {
                     </div>
                 </TopSideBar>
             </section>
-            <div>
-                <ul>
-                {playlist.map(music => {
-                    return (
-                        <li key={music.id}>
-                            <div>
-                                <span>{music.title}</span>
-                                <span>{music.author}</span>
-                            </div>
-                        </li>
-                    )
-                })}
-                </ul>
-            </div>
+
+            {/* {
+                (playlist === "" || playlist === undefined)
+            ?
+                <div>Carregando...</div>
+            : */}
+                <div>
+                    <ul>
+                    {playlists.map(music => {
+                        return (
+                            <li key={music.name}>
+                                <div>
+                                    <span>{music.name}</span>
+                                </div>
+                            </li>
+                        )
+                    })}
+                    </ul>
+                </div>
+            {/* } */}
         </ContainerSidebar>
     )
 }

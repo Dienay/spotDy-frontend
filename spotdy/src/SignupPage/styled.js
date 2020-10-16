@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const ContainerSignup = styled.div`
+    background-color: rgba(24, 24, 24, .1);
     height: 90vh;
     
     section {
@@ -19,13 +20,14 @@ export const ContainerSignup = styled.div`
 `
 
 export const CardSignup = styled.div`
+    background-color: #fff;
     align-items: center;
     border: 1px solid #c4c4c4;
     border-radius: 8px;
     box-shadow: 0 0 5px #d6d6d6;
     flex-direction: column;
     display: flex;
-    height: 600px;
+    height: 570px;
     justify-content: center;
     width: 350px;
 
