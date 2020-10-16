@@ -12,16 +12,17 @@ export const Main = styled.div`
 export const Middle = styled.div`
 `
 
-export const List = styled.div`
-    background-color: #c4c4c4;
+export const Musics = styled.div`
+background-color: rgba(24, 24, 24, .1);
     height: 100%;
 
     > ul {
         margin-top: 0;
+        padding: 8px;
     }
 
     > ul > li {
-        border-bottom: 1px solid #282828;
+        border-bottom: 1px solid #c4c4c4;
         list-style: none;
     }
 
@@ -57,8 +58,14 @@ export const List = styled.div`
     }
     `
 
-    export const Back = styled.div`
-        position: fixed;
-        top: 16px;
-        left: 16px;
+export const Music = styled.div`
+    :hover {
+        background-color: #c4c4c4;
+        transition: 200ms;
+    }
+`
+
+export const Description = styled.div`
+    display: flex;
+    background-color: gray;
 `

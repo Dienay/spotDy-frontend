@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios'
 import { baseUrl } from '../Common/CommonConst'
+import { useHistory } from 'react-router-dom';
 
 import useForm from '../Hooks/useForm';
-import { useHistory } from 'react-router-dom';
 
 import { ContainerSignup, CardSignup } from './styled'
 import Button from '@material-ui/core/Button';
@@ -82,9 +82,6 @@ function SignupPage() {
         })
     }
 
-    const toGoLoginPage = () => {
-        history.push("/login")
-    }
     return (
         <ContainerSignup>
             <Header />
@@ -152,9 +149,6 @@ function SignupPage() {
                       </Select>
                     </FormControl>
                     <Button variant="contained" color="primary" onClick={handleSignup}>Create User</Button>
-                    <Link href="#" onClick={toGoLoginPage} variant="body2">
-                        Login
-                    </Link>
                 </form>
             </CardSignup>
             </section>

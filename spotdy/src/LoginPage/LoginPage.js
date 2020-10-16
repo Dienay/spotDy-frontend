@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios'
-import { baseUrl } from '../Common/CommonConst'
-
-import useForm from '../Hooks/useForm';
 import { useHistory } from 'react-router-dom';
+
+import { baseUrl } from '../Common/CommonConst'
+import useForm from '../Hooks/useForm';
+import useCheckLoginLogout from '../Hooks/useCheckLoginLogout'
 
 import { ContainerLogin, CardLogin } from './styled'
 import Button from '@material-ui/core/Button';
@@ -56,18 +57,15 @@ function LoginPage() {
         axios
         .post(`${baseUrl}/user/login`, body)
         .then(response => {
-            window.localStorage.setItem("token", response.data.token)
             history.replace("/")
+            window.localStorage.setItem("token", response.data.token)
         })
         .catch(err => {
             console.log(err.message)
             alert("Invalid Information")
         })
     }
-
-    const toGoSignupPage = () => {
-        history.push("/signup")
-    }
+    
     return (
         <ContainerLogin>
             <Header />
@@ -94,9 +92,6 @@ function LoginPage() {
                             name="password"
                         />
                         <Button variant="contained" color="primary" onClick={handleLogin}>Entrar</Button>
-                        <Link href="#" onClick={toGoSignupPage} variant="body2">
-                            Create User
-                        </Link>
                     </form>
                 </CardLogin>
             </section>
