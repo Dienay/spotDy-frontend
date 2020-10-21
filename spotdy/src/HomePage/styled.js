@@ -6,14 +6,14 @@ export const ContainerHome = styled.div`
 
 export const Main = styled.div`
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 20vw 80vw;
+    min-height: 90vh;
 `
 
 export const Middle = styled.div`
 `
 
 export const Musics = styled.div`
-background-color: rgba(24, 24, 24, .1);
     height: 100%;
 
     > ul {

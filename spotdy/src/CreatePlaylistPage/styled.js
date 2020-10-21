@@ -31,7 +31,7 @@ export const CardCreate = styled.div`
     box-shadow: 0 0 5px #d6d6d6;
     flex-direction: column;
     display: flex;
-    height: 600px;
+    height: 300px;
     justify-content: center;
     width: 350px;
 

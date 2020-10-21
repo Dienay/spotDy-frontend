@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Router from './Router/Router'
 import { BaseTheme } from './GlobalStyles/theme';
-import { axiosConfig, baseUrl } from '../src/Common/CommonConst';
-import axios from 'axios'
-import MusicContext from './Contexts/MusicContext';
+import styled from 'styled-components'
+
+const Container = styled.div`
+  background-color: rgba(24, 24, 24, .1);
+  min-width: 100vw;
+  min-height: 100vh;
+`
 
 function App() {
   
   return (
         <ThemeProvider theme={BaseTheme}>
-          <div className="app-container">
+          <Container>
             <Router />
-          </div>
+          </Container>
         </ThemeProvider>
   );
 }

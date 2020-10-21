@@ -5,7 +5,7 @@ export const ContainerHeader = styled.header`
     display: grid;
     grid-template-columns: 2fr 3fr 2fr;
     padding: 8px 0;
-    width: 100%;
+    width: 100vw;
 
     h1 {
         color: #fff;

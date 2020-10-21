@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import useProtectedRoute from '../Hooks/useProtectedRoute';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import { axiosConfig, baseUrl } from '../Common/CommonConst';
 import { ContainerHome, Main, Middle, Musics, Music } from './styled'
@@ -11,14 +10,8 @@ import SideBar from '../Components/SideBar/index'
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles({
     list: {
@@ -110,19 +103,17 @@ function HomePage() {
                                 {musics.map(music => {
                                     return (
                                         <li key={music.id}>
-                                            <Music>
-                                                <div>
-                                                    {[music.title].map((anchor) => (
-                                                        <React.Fragment key={anchor}>
-                                                            <span onClick={toggleDrawer(anchor, true, music)}>{anchor}</span>
-                                                            <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-                                                            {list(anchor,music)}
-                                                            </Drawer>
-                                                        </React.Fragment>
-                                                    ))}
-                                                </div>
-                                                <span>{music.author}</span>
-                                            </Music>
+                                            {[music.title].map((anchor) => (
+                                                <React.Fragment key={anchor}>
+                                                    <Music onClick={toggleDrawer(anchor, true, music)}>
+                                                        <span>{anchor}</span>
+                                                        <span>{music.author}</span>
+                                                    </Music>
+                                                    <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                                                    {list(anchor,music)}
+                                                    </Drawer>
+                                                </React.Fragment>
+                                            ))}
                                         </li>
                                     )
                                 })}

@@ -1,21 +1,17 @@
 import styled from 'styled-components'
 
 export const ContainerSidebar = styled.div`
-    background-color: rgba(24, 24, 24, .1);
     border-right: 1px solid #c4c4c4;
-    height: 92.5vh;
-
-    section {
-        font-weight: 500;
-        font-size: 14px;
-    }
 `
 
 export const TopSideBar = styled.div`
-   margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 32px;
 
 > div {
     display: flex;
+    cursor: pointer;
 }
 
 > div:hover {
@@ -28,4 +24,33 @@ export const TopSideBar = styled.div`
     width: 18px;
 }
 
+`
+
+export const Playlists = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    padding: 0 24px;
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        margin-bottom: 8px;
+        margin-left: 8px;
+    }
+`
+
+export const AddNewPlaylist = styled.div`
+border-bottom: 1px solid #c4c4c4;
+cursor: pointer;
+display: flex;
+padding: 16px 0;
+
+img {
+        width: 16px;
+        margin-right: 8px;
+}
 `
