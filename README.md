@@ -10,3 +10,18 @@
 - Tela de detalhes da playlist ainda não foi criada.
 - Tela para ver itens de cada critério ainda não foi criada.
 - Tela de detalhes da playlist ainda não criada.
+
+-Surge link: http://spotdy.surge.sh/
+
+
+![signup](https://user-images.githubusercontent.com/2151948/96782001-8a9c9480-13c3-11eb-85b7-581b8fdd54be.png)
+
+![login](https://user-images.githubusercontent.com/2151948/96782282-9b4d0a80-13c3-11eb-9e75-a1935f6594a2.png)
+
+![home](https://user-images.githubusercontent.com/2151948/96782348-9ee09180-13c3-11eb-90b8-2880d8abd817.png)
+
+![detalhe-música](https://user-images.githubusercontent.com/2151948/96782430-a3a54580-13c3-11eb-959e-1037048f3346.png)
+
+![criar-playlist](https://user-images.githubusercontent.com/2151948/96782483-a6a03600-13c3-11eb-9f44-2ea9fa2e4913.png)
+
+![criar-música](https://user-images.githubusercontent.com/2151948/96782525-a9029000-13c3-11eb-9a17-f91921b4222c.png)
