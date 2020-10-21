@@ -3,13 +3,11 @@ import axios from 'axios'
 import { axiosConfig, baseUrl } from '../Common/CommonConst'
 
 import useForm from '../Hooks/useForm';
-import { useHistory } from 'react-router-dom';
 
-import { ContainerCreate, Main, Middle, Back, CardCreate } from './styled'
+import { ContainerCreate, Main, Middle, CardCreate } from './styled'
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
 
 import Header from '../Components/Header/index'
 import SideBar from '../Components/SideBar/index'
@@ -43,8 +41,6 @@ function CreateMusicPage() {
    const [date, setDate] = useState("")
 
     const classes = useStyles();
-
-    const history = useHistory()
 
     const { form, onChange } = useForm({title: "", author: "", date: "", file:"", genre: "", album: ""})
 
@@ -86,20 +82,12 @@ function CreateMusicPage() {
         })
     }
 
-    const toGoHomePage = () => {
-        history.push("/")
-    }
     return (
         <ContainerCreate>
             <Header />
             <Main>
                 <SideBar />
                 <Middle>
-                    <Back>
-                        <Link href="#" onClick={toGoHomePage} variant="body2">
-                            Back to home
-                        </Link>
-                    </Back>
                     <CardCreate>
                         <h2>Create Music</h2>
                         <form className={classes.root} noValidate autoComplete="off">

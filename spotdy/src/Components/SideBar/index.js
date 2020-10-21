@@ -1,65 +1,80 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
+
+import iconPlus from "../../Images/icons/plus.svg"
 import iconHome from "../../Images/icons/home.svg"
 import iconBrowse from "../../Images/icons/browse.svg"
-import { ContainerSidebar, TopSideBar } from './styled'
+
+import { ContainerSidebar, TopSideBar, Playlists, AddNewPlaylist } from './styled'
 import { axiosConfig, baseUrl } from '../../Common/CommonConst';
 import axios from 'axios'
 
+import { useHistory } from 'react-router-dom';
+
 function SideBar() {
-    const [playlists, setPlaylist] = useState([
-        {name: "Mùsica pra limpar a casa"},
-        {name: "Mùsica pra lavar louça"},
-        {name: "Mùsica pra domrir"}
-    ])
+    const history = useHistory()
+    const [playlists, setPlaylist] = useState([])
 
-    // useEffect(() => {
-    //     getPlaylists()
-    // },[playlist])
+    useEffect(() => {
+        getPlaylists()
+    },[])
 
-    // const getPlaylists = () =>{
-    //     axios
-    //     .get(`${baseUrl}/music/playlists`, axiosConfig)
-    //     .then(response => {
-    //         setPlaylist(response.data.result)
-    //     })
-    //     .catch(err => {
-    //     console.log(err.message)
-    //     })
-    // }
+    const getPlaylists = () =>{
+        axios
+        .get(`${baseUrl}/playlist/playlists`, axiosConfig)
+        .then(response => {
+            setPlaylist(response.data.result)
+        })
+        .catch(err => {
+        console.log(err.message)
+        })
+    }
+
+    const goToHomePage = () => {
+        history.push("/");
+    }
+
+    const goToCreateMusicPage = () => {
+        history.push("/create-music");
+    }
+
+    const goToCreatePlaylistPage = () => {
+        history.push("/create-playlist");
+    }
+    
     return (
         <ContainerSidebar>
-            <section>
                 <TopSideBar>
-                    <div>
-                        <img src={iconHome} alt="icons plus" />
+                    <div onClick={goToHomePage}>
+                        <img src={iconHome} alt="icons home"/>
                         <p>Home</p>
                     </div>
                     <div>
-                        <img src={iconBrowse} alt="icons plus" />
+                        <img src={iconBrowse} alt="icons Browse"/>
                         <p>Browse</p>
                     </div>
+                    <div onClick={goToCreateMusicPage}>
+                        <img src={iconPlus} alt="icons Browse"/>
+                        <p>Create Music</p>
+                    </div>
                 </TopSideBar>
-            </section>
-
-            {/* {
-                (playlist === "" || playlist === undefined)
-            ?
-                <div>Carregando...</div>
-            : */}
-                <div>
-                    <ul>
-                    {playlists.map(music => {
-                        return (
-                            <li key={music.name}>
-                                <div>
-                                    <span>{music.name}</span>
-                                </div>
-                            </li>
-                        )
-                    })}
-                    </ul>
-                </div>
-            {/* } */}
+                <Playlists>
+                        <p>PLAYLISTIS</p>
+                        <AddNewPlaylist onClick={goToCreatePlaylistPage} >
+                            <img src={iconPlus} alt="icons plus" />
+                            <span>New Playlist</span>
+                        </AddNewPlaylist>
+                        <ul>
+                        {playlists.map(playlist => {
+                            return (
+                                <li key={playlist.id}>
+                                    <div>
+                                        <span>{playlist.title}</span>
+                                    </div>
+                                </li>
+                            )
+                        })}
+                        </ul>
+                </Playlists>
         </ContainerSidebar>
     )
 }

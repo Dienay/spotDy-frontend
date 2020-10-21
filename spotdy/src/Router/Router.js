@@ -4,7 +4,7 @@ import CreateMusicPage from '../CreateMusicPage/CreateMusicPage';
 import HomePage from '../HomePage/HomePage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
-
+import CreatePLaylistPage from '../CreatePlaylistPage/CreatePLaylistPage'
 
 function Router() {
   return (
@@ -22,8 +22,12 @@ function Router() {
                 <SignupPage />
             </Route>
 
-            <Route exact path="/create" >
+            <Route exact path="/create-music" >
                 <CreateMusicPage />
+            </Route>
+
+            <Route exact path="/create-playlist" >
+                <CreatePLaylistPage />
             </Route>
 
             <Route path="/" >

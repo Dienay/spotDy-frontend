@@ -57,8 +57,8 @@ function LoginPage() {
         axios
         .post(`${baseUrl}/user/login`, body)
         .then(response => {
-            history.replace("/")
             window.localStorage.setItem("token", response.data.token)
+            history.replace("/")
         })
         .catch(err => {
             console.log(err.message)
