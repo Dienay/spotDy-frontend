@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const ContainerSignup = styled.div`
     background-color: rgba(24, 24, 24, .1);
-    height: 90vh;
+    height: 100vh;
     
     section {
         align-items: center;
         display: flex;
-        height: 100%;
+        height: 90%;
         justify-content: center;
         width: 100%;
     }
