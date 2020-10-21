@@ -11,6 +11,8 @@
 - Tela para ver itens de cada critério ainda não foi criada.
 - Tela de detalhes da playlist ainda não criada.
 
+Backend link: https://github.com/Dienay/spotDy-backtend
+
 -Surge link: http://spotdy.surge.sh/
 
 
