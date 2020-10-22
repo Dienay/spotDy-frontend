@@ -4,8 +4,9 @@ import axios from 'axios'
 import { axiosConfig, baseUrl } from '../Common/CommonConst';
 import { ContainerHome, Main, Middle, Musics, Music } from './styled'
 
-import Header from '../Components/Header/index'
-import SideBar from '../Components/SideBar/index'
+import Header from '../Components/Header/Header'
+import SideBar from '../Components/SideBar/SideBar'
+import Player from '../Components/Player/Player'
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -123,6 +124,7 @@ function HomePage() {
                     }
                 </Middle>
             </Main>
+            <Player />
         </ContainerHome>
     )
 }

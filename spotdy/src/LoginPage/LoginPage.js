@@ -12,7 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 
-import Header from '../Components/Header/index'
+import Header from '../Components/Header/Header'
 
 const useStyles = makeStyles((theme) => ({
     root: {

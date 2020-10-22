@@ -2,16 +2,24 @@ import styled from 'styled-components'
 
 export const ContainerSidebar = styled.div`
     border-right: 1px solid #c4c4c4;
+    font-size: 14px;
+    font-weight: 500;
+
+    img {
+    margin-right: 8px;
+    width: 16px;
+}
 `
 
 export const TopSideBar = styled.div`
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 
 > div {
     display: flex;
+    align-items: center;
     cursor: pointer;
+    height: 32px;
+    padding: 0 24px;
 }
 
 > div:hover {
@@ -19,28 +27,20 @@ export const TopSideBar = styled.div`
     transition: 200ms;
 }
 
-> div > img {
-    margin: 0 16px;
-    width: 18px;
-}
-
 `
 
 export const Playlists = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: space-evenly;
     padding: 0 24px;
 
-    ul {
-        padding: 0;
+    li {
+        margin: 8px;
+        cursor: pointer;
     }
 
-    li {
-        list-style: none;
-        margin-bottom: 8px;
-        margin-left: 8px;
-    }
+    li:hover {
+    color: #c4c4c4;
+    transition: 200ms;
+}
 `
 
 export const AddNewPlaylist = styled.div`
@@ -49,8 +49,4 @@ cursor: pointer;
 display: flex;
 padding: 16px 0;
 
-img {
-        width: 16px;
-        margin-right: 8px;
-}
 `

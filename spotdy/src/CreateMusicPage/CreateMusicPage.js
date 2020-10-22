@@ -9,8 +9,8 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-import Header from '../Components/Header/index'
-import SideBar from '../Components/SideBar/index'
+import Header from '../Components/Header/Header'
+import SideBar from '../Components/SideBar/SideBar'
 
 const useStyles = makeStyles((theme) => ({
     root: {
