@@ -13,9 +13,8 @@ import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
-import Link from '@material-ui/core/Link';
 
-import Header from '../Components/Header/index'
+import Header from '../Components/Header/Header'
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -4,8 +4,9 @@ export const ContainerHeader = styled.header`
     background-color: #181818;
     display: grid;
     grid-template-columns: 2fr 3fr 2fr;
-    padding: 8px 0;
-    width: 100vw;
+    align-items: center;
+    height: 50px;
+    width: 100%;
 
     h1 {
         color: #fff;

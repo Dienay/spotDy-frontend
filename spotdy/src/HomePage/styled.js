@@ -1,20 +1,17 @@
 import styled from 'styled-components'
 
 export const ContainerHome = styled.div`
-   height: 92.5vh;
 `
 
 export const Main = styled.div`
     display: grid;
     grid-template-columns: 20vw 80vw;
-    min-height: 90vh;
 `
 
 export const Middle = styled.div`
 `
 
 export const Musics = styled.div`
-    height: 100%;
 
     > ul {
         margin-top: 0;
