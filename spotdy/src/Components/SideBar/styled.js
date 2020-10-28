@@ -4,6 +4,7 @@ export const ContainerSidebar = styled.div`
     border-right: 1px solid #c4c4c4;
     font-size: 14px;
     font-weight: 500;
+    height: 100%;
 
     img {
     margin-right: 8px;
@@ -12,8 +13,9 @@ export const ContainerSidebar = styled.div`
 `
 
 export const TopSideBar = styled.div`
+    border-bottom: 1px solid #c4c4c4;
     margin-bottom: 16px;
-
+    padding: 16px 0;
 > div {
     display: flex;
     align-items: center;
@@ -30,23 +32,28 @@ export const TopSideBar = styled.div`
 `
 
 export const Playlists = styled.div`
-    padding: 0 24px;
+    p {
+        padding: 4px 24px;
+    }
 
     li {
-        margin: 8px;
+        padding: 4px 24px;
         cursor: pointer;
     }
 
     li:hover {
-    color: #c4c4c4;
-    transition: 200ms;
-}
-`
+        background-color: #c4c4c4;
+        transition: 200ms;
+    }
+    `
 
 export const AddNewPlaylist = styled.div`
-border-bottom: 1px solid #c4c4c4;
-cursor: pointer;
-display: flex;
-padding: 16px 0;
+    cursor: pointer;
+    display: flex;
+    padding: 16px 24px;
 
+    :hover {
+        background-color: #c4c4c4;
+        transition: 200ms;
+    }
 `

@@ -8,6 +8,7 @@ export const PlayerContainer = styled.div`
     bottom: 0;
     background-color: #181818;
     height: 8vh;
+    min-height: 80px;
     width: 100%;
 
     
@@ -42,23 +43,17 @@ export const MusicPlayer = styled.div`
         color: white;
     }
 
-    .player {
-        float: left;
-    }
-
     .player-timeline {
-        float: left;
-        max-width: 200px;
-        width: 200px;
-        height: 4px;
-        margin-top: 13px;
-        background: #555;
-        margin-left: 20px;
+        display: flex;
     }
 
     .player-timeline-control {
         height: 4px;
         background: #999;
+    }
+
+    .volume-up {
+        display: flex;
     }
 `
 
