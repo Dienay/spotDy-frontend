@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const ContainerHome = styled.div`
+
 `
 
 export const Main = styled.div`
     display: grid;
     grid-template-columns: 20vw 80vw;
+    height: 90vh;
 `
 
 export const Middle = styled.div`
