@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 import { PlayerContainer, MusicPlayer } from './styled'
+import Prev from '../../Images/player/prev.svg'
+import Pause from '../../Images/player/pause.svg'
+import Play from '../../Images/player/play-circle.svg'
+import Stop from '../../Images/player/stop.svg'
+import Next from '../../Images/player/next.svg'
 
 function Player() {
     const [countTrack, setCountTrack] = useState(0)
@@ -84,8 +89,8 @@ function Player() {
     }
 
     const secondsToMinutes = (time) => {
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
+        let minutes = Math.floor(time / 60);
+        let seconds = Math.floor(time % 60);
         return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`
     }
 
@@ -96,12 +101,20 @@ function Player() {
         console.log(secondsToMinutes(teste))
     }
 
+    const convertTime = (timestamp) => {
+        let minutes = Math.floor(timestamp / 60);
+      let seconds = timestamp - (minutes * 60);
+        if (seconds < 10) { seconds = '0' + seconds; }
+        timestamp = minutes + ':' + seconds;
+        return timestamp;
+    }
+
     console.log(currentTrackTime)
 
   return (
         <PlayerContainer>
             <div>
-                <img className="image-cover" src={currentTrack.cover} alt="cover"/>
+                {/* <img className="image-cover" src={currentTrack.cover} alt="cover"/> */}
                 <div className="author">
                     <p>{currentTrack.author}</p>
                 </div>
@@ -109,30 +122,30 @@ function Player() {
             <MusicPlayer>
                 <audio className="audio" src={currentTrack.file} />
                 <div className="player-controls">
-                    <span className="player-prev" onClick={prevTrack} >Prev</span>
-                    <span className="player-play" onClick={playTrack} >Play</span>
-                    <span className="player-pause" onClick={pauseTrack} >Pause</span>
-                    <span className="player-stop" onClick={stopTrack} >Stop</span>
-                    <span className="player-next" onClick={nextTrack} >Next</span>
+                    <img onClick={prevTrack} src={Prev} alt="Voltar/Prev" />
+                    <img onClick={pauseTrack} src={Pause} alt="Pause" />
+                    <img onClick={playTrack} src={Play} alt="Play/Tocar" id="play"/>
+                    <img onClick={stopTrack} src={Stop} alt="Stop/Parar" />
+                    <img onClick={nextTrack} src={Next} alt="Próximo/Next" />
                 </div>
 
-                <div className="player-timeline">
+                {/* <div className="player-timeline">
                     <div className="current-duration">{currentTrackTime}</div>
                     <div className="timeline">
                         <input type="range" min="0" max={totalTime} onChange={onChangeSeek} step="1" value={currentTrackTime}/>
                     </div>
                     <div className="total-duration">{totalTime}</div>
-                </div>
+                </div> */}
 
+                {/* <div className="player-display">
+                    <p>Playing:</p>
+                    <span className="player-current-track">{currentTrack.title}</span>
+                </div> */}
                 <div className="volume-up">
                     <div className="current-duration">vol</div>
                     <div className="vol-control">
                         <input type="range" min="0" max="100" onChange={onChangeVolume} step="1" value={volume}/>
                     </div>
-                </div>
-                <div className="player-display">
-                    <p>Playing:</p>
-                    <span className="player-current-track">{currentTrack.title}</span>
                 </div>
             </MusicPlayer>
             

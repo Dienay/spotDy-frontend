@@ -24,13 +24,27 @@ export const MusicPlayer = styled.div`
         color: #c4c4c4;
     }
 
-    .player-controls span{
+    .player-controls{
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        cursor: pointer;
+        padding: 0 5px;
+        width: 100%
+    }
+
+    .player-controls img{
+        height: 30px;
         cursor: pointer;
         padding: 0 5px;
     }
 
     .player-controls span:hover {
     color: #EEE;
+    }
+
+    #play {
+        height: 50px;
     }
 
     .player-display {
@@ -54,6 +68,8 @@ export const MusicPlayer = styled.div`
 
     .volume-up {
         display: flex;
+        position: absolute;
+        right: 24px;
     }
 `
 
