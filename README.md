@@ -16,14 +16,15 @@ Backend link: https://github.com/Dienay/spotDy-backtend
 -Surge link: http://spotdy.surge.sh/
 
 
-![signup](https://user-images.githubusercontent.com/2151948/96782001-8a9c9480-13c3-11eb-85b7-581b8fdd54be.png)
+![signup](https://user-images.githubusercontent.com/2151948/105904609-1e53b180-6000-11eb-9935-350a474aa212.png)
 
-![login](https://user-images.githubusercontent.com/2151948/96782282-9b4d0a80-13c3-11eb-9e75-a1935f6594a2.png)
+![login](https://user-images.githubusercontent.com/2151948/105904631-23186580-6000-11eb-9a56-9e83ab7a4b79.png)
 
-![home](https://user-images.githubusercontent.com/2151948/96782348-9ee09180-13c3-11eb-90b8-2880d8abd817.png)
+![home](https://user-images.githubusercontent.com/2151948/105904657-2b70a080-6000-11eb-97ef-491ab3a9f292.png)
 
-![detalhe-música](https://user-images.githubusercontent.com/2151948/96782430-a3a54580-13c3-11eb-959e-1037048f3346.png)
+![detail](https://user-images.githubusercontent.com/2151948/105904820-6246b680-6000-11eb-8a16-96ec83f171f7.png)
 
-![criar-playlist](https://user-images.githubusercontent.com/2151948/96782483-a6a03600-13c3-11eb-9f44-2ea9fa2e4913.png)
+![create music](https://user-images.githubusercontent.com/2151948/105904665-2f9cbe00-6000-11eb-968c-ef4bb84899ec.png)
 
-![criar-música](https://user-images.githubusercontent.com/2151948/96782525-a9029000-13c3-11eb-9a17-f91921b4222c.png)
+![create playlist](https://user-images.githubusercontent.com/2151948/105904680-33c8db80-6000-11eb-8fb8-4ff52701790e.png)
+
