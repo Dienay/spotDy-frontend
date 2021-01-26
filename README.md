@@ -21,7 +21,7 @@ Desenvolver uma aplicação que permita ao usuário consumir um [API](https://gi
 
 ### O que funciona
 - Autenticação: É possível cadastrar um novo usuário e fazer login. Para entrar nas outras páginas é necessário está logado.
-- Tela de criação de música, e para que isso seja possível é necessário preencher todos os campos(Use a url 'http://spoti4.future4.com.br/1.mp3' no campo file alterando o número antes de .mp3 tendo a opção de 1 até 100.
+- Tela de criação de música, e para que isso seja possível é necessário preencher todos os campos(Use a url 'http://spoti4.future4.com.br/1.mp3' no campo file alterando o número antes de .mp3 tendo a opção de 1 até 100).
 - Leitura de música, A lista das músicas é mostrada e ao clicar em alguma delas abre uma barra lateral com os detalhes da música.
 - Tela de criação de playlist, é necessário fornecer titulo para playlist e subtitulo, a playliste recebe a data da criação gerado no back-end.
 - Tela de listagem de playlists, na tela inicial é possível visualizar as lista de playlists.
