@@ -125,13 +125,13 @@ function SignupPage() {
                         name="password"
                     />
                     <TextField
-                        id="confirm-password"
+                        id="confirmPassword"
                         label="Confirm password"
                         variant="outlined"
                         value={form.confirmPassword}
                         onChange={handleInputChange}
                         type="password"
-                        name="confirm-password"
+                        name="confirmPassword"
                     />
                     <FormControl variant="outlined" className={classes.formControl}>
                       <InputLabel id="demo-simple-select-outlined-label">Role</InputLabel>

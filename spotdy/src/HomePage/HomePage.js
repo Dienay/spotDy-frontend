@@ -14,6 +14,8 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
+import Menu from '../Images/icons/menu.svg'
+
 const useStyles = makeStyles({
     list: {
       width: 250,
@@ -25,9 +27,12 @@ const useStyles = makeStyles({
 
 function HomePage() {
     const [musics, setMusics] = useState("")
+    const [currentMusic, setCurrentMusic] = useState({})
+    const [playing, setPlaying] = useState("")
 
     useEffect(() => {
         getMusics()
+        setPlaying("playing")
     },[musics])
 
     useProtectedRoute();
@@ -66,6 +71,7 @@ function HomePage() {
         onKeyDown={toggleDrawer(anchor, false)}
         >
         <List>
+            <p>Esc para sair</p>
             {[
                 {text: "Title: ", item: music.title},
                 {text: "Author: ", item: music.author},
@@ -80,6 +86,10 @@ function HomePage() {
         </List>
         </div>
     );
+
+    const togglePlay = (file) => {
+        setCurrentMusic(file)
+    }
 
 
     return (
@@ -105,15 +115,16 @@ function HomePage() {
                                     return (
                                         <li key={music.id}>
                                             {[music.title].map((anchor) => (
-                                                <React.Fragment key={anchor}>
-                                                    <Music onClick={toggleDrawer(anchor, true, music)}>
-                                                        <span>{anchor}</span>
-                                                        <span>{music.author}</span>
-                                                    </Music>
-                                                    <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-                                                    {list(anchor,music)}
-                                                    </Drawer>
-                                                </React.Fragment>
+                                                <Music key={music.id}>
+                                                    <span onClick={() => togglePlay(music)} >{anchor}</span>
+                                                    <span>{music.author}</span>
+                                                    <React.Fragment key={anchor}>
+                                                        <img onClick={toggleDrawer(anchor, true, music)} src={Menu} alt="menu" />
+                                                        <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                                                            {list(anchor,music)}
+                                                        </Drawer>
+                                                    </React.Fragment>
+                                                </Music>
                                             ))}
                                         </li>
                                     )
@@ -123,8 +134,8 @@ function HomePage() {
                         
                     }
                 </Middle>
-            </Main>
-            <Player />
+            </Main> 
+            <Player musics={musics} setCurrentMusic={setCurrentMusic} currentMusic={currentMusic}/>
         </ContainerHome>
     )
 }
