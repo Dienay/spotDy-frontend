@@ -55,6 +55,7 @@ export const Musics = styled.div`
         width: 30px;
         height: 30px;
     }
+
     `
 
 export const Music = styled.div`

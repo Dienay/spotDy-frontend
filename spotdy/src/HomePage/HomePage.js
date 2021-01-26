@@ -28,9 +28,11 @@ const useStyles = makeStyles({
 function HomePage() {
     const [musics, setMusics] = useState("")
     const [currentMusic, setCurrentMusic] = useState({})
+    const [playing, setPlaying] = useState("")
 
     useEffect(() => {
         getMusics()
+        setPlaying("playing")
     },[musics])
 
     useProtectedRoute();
@@ -85,6 +87,10 @@ function HomePage() {
         </div>
     );
 
+    const togglePlay = (file) => {
+        setCurrentMusic(file)
+    }
+
 
     return (
         <ContainerHome>
@@ -110,7 +116,7 @@ function HomePage() {
                                         <li key={music.id}>
                                             {[music.title].map((anchor) => (
                                                 <Music key={music.id}>
-                                                    <span>{anchor}</span>
+                                                    <span onClick={() => togglePlay(music)} >{anchor}</span>
                                                     <span>{music.author}</span>
                                                     <React.Fragment key={anchor}>
                                                         <img onClick={toggleDrawer(anchor, true, music)} src={Menu} alt="menu" />
@@ -129,7 +135,7 @@ function HomePage() {
                     }
                 </Middle>
             </Main> 
-            <Player musics={musics}/>
+            <Player musics={musics} setCurrentMusic={setCurrentMusic} currentMusic={currentMusic}/>
         </ContainerHome>
     )
 }

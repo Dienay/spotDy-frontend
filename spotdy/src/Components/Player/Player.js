@@ -10,51 +10,16 @@ import Next from '../../Images/player/next.svg'
 function Player(props) {
     const [countTrack, setCountTrack] = useState(0)
     const [currentTrack, setCurrentTrack] = useState({})
-    //const [playlist, setPaylist] = useState("00:00")
-    const [totalTime, setTotalTime] = useState(0)
+    const [playlist, setPaylist] = useState([])
     const [volume, setVolume] = useState(50)
 
-    const playlist = [
-        {
-            album: "tustus",
-            author: "Chico",
-            date: "23/01/2021",
-            file: "http://spoti4.future4.com.br/1.mp3",
-            genre: "tuts",
-            id: "a3ea4d2e-6797-43a4-a0d7-8f81353c24ba",
-            title: "Musica 1"
-        },
-        {
-            album: "nada",
-            author: "Chico",
-            date: "23/01/2021",
-            file: "http://spoti4.future4.com.br/2.mp3",
-            genre: "pop",
-            id: "0035aff4-1132-4ea5-aaf4-8cf761c0aa6d",
-            title: "Musica 2"
-        },
-        {
-            album: "Tuts",
-            author: "Chico",
-            date: "26/01/2021",
-            file: "http://spoti4.future4.com.br/3.mp3",
-            genre: "music",
-            id: "60fd3530-eea4-477f-ac6a-ae55952ff516",
-            title: "Musica 3"
-        }
-    ]
-    console.log(playlist)
-
-    console.log(props.musics)
+    useEffect(() => {
+        setPaylist(props.musics)
+        setCurrentTrack(playlist[countTrack])
+    })
  
     useEffect(() => {
         setCurrentTrack(playlist[countTrack])
-        
-        const audio = document.getElementsByTagName("audio")[0]
-        audio.onloadeddata = () => {
-            const duration = audio.duration
-            setTotalTime(secondsToMinutes(duration))
-        }
     },[countTrack])
 
     const audio = document.getElementsByTagName("audio")[0];
@@ -103,33 +68,13 @@ function Player(props) {
         audio.volume = event.target.value / 100;
     }
 
-    const secondsToMinutes = (time) => {
-        let minutes = Math.floor(time / 60);
-        let seconds = Math.floor(time % 60);
-        return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`
-    }
-
-    // const onChangeSeek = (event) => {
-    //     const timeTotal = event.target.value
-    //     const teste = audio.currentTime
-    //     setCurrentTrackTime(secondsToMinutes(timeTotal))
-    //     console.log(secondsToMinutes(teste))
-    // }
-
-    // const convertTime = (timestamp) => {
-    //     let minutes = Math.floor(timestamp / 60);
-    //   let seconds = timestamp - (minutes * 60);
-    //     if (seconds < 10) { seconds = '0' + seconds; }
-    //     timestamp = minutes + ':' + seconds;
-    //     return timestamp;
-    // }
-
-    // console.log(currentTrackTime)
-
   return (
         <PlayerContainer>
             <MusicPlayer>
-                <audio className="audio" src={currentTrack.file} />
+            <audio className="audio" src={currentTrack?.file} />
+            <div className="playing">
+                <p>Playing: {currentTrack?.title}</p>
+            </div>
                 <div className="player-controls">
                     <img onClick={prevTrack} src={Prev} alt="Voltar/Prev" />
                     <img onClick={pauseTrack} src={Pause} alt="Pause" />

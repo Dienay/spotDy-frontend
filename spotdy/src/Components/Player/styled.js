@@ -50,18 +50,36 @@ export const MusicPlayer = styled.div`
         margin-left: 50px;
     }
 
-    .player-display .player-current-track {
-        color: white;
+    .playing {
+        font-size: 12px;
+        position: absolute;
+        left: 24px;
+        width: 110px;
+        
+        p {
+            animation: 3s ease-in 1s infinite alternate-reverse both running slidein;
+            @keyframes slidein {
+                from {
+                    margin-left:100%;
+                    width:100px;
+                }
+
+                to {
+                    margin-left:0%;
+                    width:100px;
+                }
+            }
+        }
     }
 
-    .player-timeline {
+    /* .player-timeline {
         display: flex;
-    }
+    } */
 
-    .player-timeline-control {
+    /* .player-timeline-control {
         height: 4px;
         background: #999;
-    }
+    } */
 
     .volume-up {
         display: flex;
