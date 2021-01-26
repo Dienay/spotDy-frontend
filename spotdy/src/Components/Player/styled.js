@@ -34,13 +34,10 @@ export const MusicPlayer = styled.div`
     }
 
     .player-controls img{
-        height: 30px;
         cursor: pointer;
+        height: 20px;
+        margin: 0 8px;
         padding: 0 5px;
-    }
-
-    .player-controls span:hover {
-    color: #EEE;
     }
 
     #play {

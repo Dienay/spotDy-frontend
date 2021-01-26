@@ -1,6 +1,5 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ContainerHeader, Logo, Buttons } from './styled';
-import HeaderContext from '../../Contexts/HeaderContext'
 
 import { useHistory } from 'react-router-dom';
 

@@ -62,6 +62,10 @@ export const Music = styled.div`
         background-color: #c4c4c4;
         transition: 200ms;
     }
+
+    img {
+        cursor: pointer;
+    }
 `
 
 export const Description = styled.div`

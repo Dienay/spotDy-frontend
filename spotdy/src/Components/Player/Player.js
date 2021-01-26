@@ -7,13 +7,46 @@ import Play from '../../Images/player/play-circle.svg'
 import Stop from '../../Images/player/stop.svg'
 import Next from '../../Images/player/next.svg'
 
-function Player() {
+function Player(props) {
     const [countTrack, setCountTrack] = useState(0)
     const [currentTrack, setCurrentTrack] = useState({})
-    const [currentTrackTime, setCurrentTrackTime] = useState("00:00")
+    //const [playlist, setPaylist] = useState("00:00")
     const [totalTime, setTotalTime] = useState(0)
     const [volume, setVolume] = useState(50)
 
+    const playlist = [
+        {
+            album: "tustus",
+            author: "Chico",
+            date: "23/01/2021",
+            file: "http://spoti4.future4.com.br/1.mp3",
+            genre: "tuts",
+            id: "a3ea4d2e-6797-43a4-a0d7-8f81353c24ba",
+            title: "Musica 1"
+        },
+        {
+            album: "nada",
+            author: "Chico",
+            date: "23/01/2021",
+            file: "http://spoti4.future4.com.br/2.mp3",
+            genre: "pop",
+            id: "0035aff4-1132-4ea5-aaf4-8cf761c0aa6d",
+            title: "Musica 2"
+        },
+        {
+            album: "Tuts",
+            author: "Chico",
+            date: "26/01/2021",
+            file: "http://spoti4.future4.com.br/3.mp3",
+            genre: "music",
+            id: "60fd3530-eea4-477f-ac6a-ae55952ff516",
+            title: "Musica 3"
+        }
+    ]
+    console.log(playlist)
+
+    console.log(props.musics)
+ 
     useEffect(() => {
         setCurrentTrack(playlist[countTrack])
         
@@ -23,24 +56,6 @@ function Player() {
             setTotalTime(secondsToMinutes(duration))
         }
     },[countTrack])
-
-    const playlist = [
-        {
-            title: "music1",
-            file: "http://spoti4.future4.com.br/1.mp3",
-            cover: "https://picsum.photos/50/50?a=1"
-        },
-        {
-            title: "music2",
-            file: "http://spoti4.future4.com.br/2.mp3",
-            cover: "https://picsum.photos/50/50?a=2"
-        },
-        {
-            title: "music3",
-            file: "http://spoti4.future4.com.br/3.mp3",
-            cover: "https://picsum.photos/50/50?a=3"
-        }
-    ]
 
     const audio = document.getElementsByTagName("audio")[0];
 
@@ -94,31 +109,25 @@ function Player() {
         return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`
     }
 
-    const onChangeSeek = (event) => {
-        const timeTotal = event.target.value
-        const teste = audio.currentTime
-        setCurrentTrackTime(secondsToMinutes(timeTotal))
-        console.log(secondsToMinutes(teste))
-    }
+    // const onChangeSeek = (event) => {
+    //     const timeTotal = event.target.value
+    //     const teste = audio.currentTime
+    //     setCurrentTrackTime(secondsToMinutes(timeTotal))
+    //     console.log(secondsToMinutes(teste))
+    // }
 
-    const convertTime = (timestamp) => {
-        let minutes = Math.floor(timestamp / 60);
-      let seconds = timestamp - (minutes * 60);
-        if (seconds < 10) { seconds = '0' + seconds; }
-        timestamp = minutes + ':' + seconds;
-        return timestamp;
-    }
+    // const convertTime = (timestamp) => {
+    //     let minutes = Math.floor(timestamp / 60);
+    //   let seconds = timestamp - (minutes * 60);
+    //     if (seconds < 10) { seconds = '0' + seconds; }
+    //     timestamp = minutes + ':' + seconds;
+    //     return timestamp;
+    // }
 
-    console.log(currentTrackTime)
+    // console.log(currentTrackTime)
 
   return (
         <PlayerContainer>
-            <div>
-                {/* <img className="image-cover" src={currentTrack.cover} alt="cover"/> */}
-                <div className="author">
-                    <p>{currentTrack.author}</p>
-                </div>
-            </div>
             <MusicPlayer>
                 <audio className="audio" src={currentTrack.file} />
                 <div className="player-controls">
@@ -129,18 +138,6 @@ function Player() {
                     <img onClick={nextTrack} src={Next} alt="Próximo/Next" />
                 </div>
 
-                {/* <div className="player-timeline">
-                    <div className="current-duration">{currentTrackTime}</div>
-                    <div className="timeline">
-                        <input type="range" min="0" max={totalTime} onChange={onChangeSeek} step="1" value={currentTrackTime}/>
-                    </div>
-                    <div className="total-duration">{totalTime}</div>
-                </div> */}
-
-                {/* <div className="player-display">
-                    <p>Playing:</p>
-                    <span className="player-current-track">{currentTrack.title}</span>
-                </div> */}
                 <div className="volume-up">
                     <div className="current-duration">vol</div>
                     <div className="vol-control">
@@ -148,7 +145,6 @@ function Player() {
                     </div>
                 </div>
             </MusicPlayer>
-            
         </PlayerContainer>
     )
 }
