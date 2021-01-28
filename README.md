@@ -2,6 +2,10 @@
 
 <br>
 
+[spotDy](http://spotdy.surge.sh/)
+
+<br>
+
 ## Principais tecnologias/ferramentas utilizadas
 
 1. React
@@ -30,9 +34,6 @@ Desenvolver uma aplicação que permita ao usuário consumir um [API](https://gi
 - Opção de adicionar música em playlist
 
 Backend link: https://github.com/Dienay/spotDy-backtend
-
-Surge link: http://spotdy.surge.sh/
-
 
 ![signup](https://user-images.githubusercontent.com/2151948/105904609-1e53b180-6000-11eb-9935-350a474aa212.png)
 
